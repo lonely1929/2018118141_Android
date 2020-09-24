@@ -1,33 +1,33 @@
 MainActivity第一次被创建时会一次执行onCreate()、onStart()和onResume()方法。
 
-![图片1](第一次作业截图.assets/图片1-1600836332410.png)
+![图片1](1-Homework.assets/图片1-1600836332410.png)
 
-![图片2](第一次作业截图.assets/图片2-1600836339216.png)
+![图片2](1-Homework.assets/图片2-1600836339216.png)
 
-![图片3](第一次作业截图.assets/图片3-1600836396949.png)
+![图片3](1-Homework.assets/图片3-1600836396949.png)
 
 点击第一个按钮，启动NomalActivity，NomalActivity会将MainActivity完全遮挡，并执行onPause()和onStop()方法，此时MainActivity进入了停止状态。
 
-![图片4](第一次作业截图.assets/图片4-1600837486778.png)
+![图片4](1-Homework.assets/图片4-1600837486778.png)
 
-![图片5](第一次作业截图.assets/图片5-1600837493776.png)
+![图片5](1-Homework.assets/图片5-1600837493776.png)
 
-![图片6](第一次作业截图.assets/图片6.png)
+![图片6](1-Homework.assets/图片6.png)
 
 按下Back键返回MainActivity，执行onRestart()方法，然后依次执行onStart()和onResume()方法，onCreat()方法则不会被执行，因为MainActivity没有被重新创建。
 
-![图片7](第一次作业截图.assets/图片7.png)
+![图片7](1-Homework.assets/图片7.png)
 
 点击第二个按钮，启动DialogActivity
 
-![图片8](第一次作业截图.assets/图片8.png)
+![图片8](1-Homework.assets/图片8.png)
 
 只有onPause()方法执行了，onStop()方法并没有执行，因为DialogActivity没有完全遮挡住MainActivity，MainActivity只是进入了暂停状态，按下Back键返回MainActivity也只有onResume()方法执行了。
 
-![图片9](第一次作业截图.assets/图片9.png)
+![图片9](1-Homework.assets/图片9.png)
 
-![图片10](第一次作业截图.assets/图片10-1600838139271.png)
+![图片10](1-Homework.assets/图片10-1600838139271.png)
 
 最后在MainActivity按下Back键退出程序，会依次执行onPause()、onStop()和onDestroy()方法。
 
-![图片11](第一次作业截图.assets/图片11.png)
+![图片11](1-Homework.assets/图片11.png)
