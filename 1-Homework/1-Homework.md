@@ -1,3 +1,6 @@
+###  实验要求：展示生命周期的回调函数在不同条件下的触发条件和运行机制
+### 实验目的：掌握并深入理解活动的生命周期
+### 实验内容：
 MainActivity第一次被创建时会一次执行onCreate()、onStart()和onResume()方法。
 
 ![图片1](1-Homework.assets/图片1-1600836332410.png)
@@ -31,3 +34,6 @@ MainActivity第一次被创建时会一次执行onCreate()、onStart()和onResum
 最后在MainActivity按下Back键退出程序，会依次执行onPause()、onStop()和onDestroy()方法。
 
 ![图片11](1-Homework.assets/图片11.png)
+### 实验总结：
+#### 评价：了解到活动的4种状态以及7个回调方法，还有3种生存期
+#### 心得收获：通过编写程序更好地理解活动的生命周期，这样才能鞋出更加流畅的程序，合理管理应用资源，希望能给用户更好的体验。
