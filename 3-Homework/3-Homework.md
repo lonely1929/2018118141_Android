@@ -1,0 +1,1 @@
+![image-20201002204532598](3-Homework.assets/image-20201002204532598.png)
