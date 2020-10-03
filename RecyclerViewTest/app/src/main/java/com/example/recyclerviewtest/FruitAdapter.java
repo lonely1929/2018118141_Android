@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> {
+
     private List<Fruit> mFruitList;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
@@ -46,5 +47,5 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
     public int getItemCount() {
         return mFruitList.size();
     }
-}
 
+}

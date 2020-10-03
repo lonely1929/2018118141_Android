@@ -1,1 +1,5 @@
 ![image-20201002204532598](3-Homework.assets/image-20201002204532598.png)
+
+![image-20201003111547813](3-Homework.assets/image-20201003111547813.png)
+
+![image-20201003112038903](3-Homework.assets/image-20201003112038903.png)
