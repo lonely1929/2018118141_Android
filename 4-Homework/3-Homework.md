@@ -4,29 +4,29 @@
 
 ​	纵向滚动：RecyclerView实现了和ListView几乎一模一样的效果，代码量虽然没有明显减少，但逻辑更加清晰。
 
-![image-20201002204532598](3-Homework.assets/image-20201002204532598.png)
+![image-20201002204532598](4-Homework.assets/image-20201002204532598.png)
 
 
 
 ​	横向滚动：ListView扩展性不好，只能实现纵向滚动的效果，但RecyclerView能实现横向滚动。
 
-![image-20201003111547813](3-Homework.assets/image-20201003111547813.png)
+![image-20201003111547813](4-Homework.assets/image-20201003111547813.png)
 
 
 
 ​	瀑布流布局：
 
-![image-20201003112038903](3-Homework.assets/image-20201003112038903.png)
+![image-20201003112038903](4-Homework.assets/image-20201003112038903.png)
 
 
 
 ​	RecyclerView的点击事件：RecyclerView也能响应点击事件，但是RecyclerView并没有提供注册监听器方法，那就需要给子项具体的ListView注册点击事件。
 
-![image-20201004134548185](3-Homework.assets/image-20201004134548185.png)
+![image-20201004134548185](4-Homework.assets/image-20201004134548185.png)
 
 
 
-![image-20201004134605407](3-Homework.assets/image-20201004134605407.png)
+![image-20201004134605407](4-Homework.assets/image-20201004134605407.png)
 
 
 
