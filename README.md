@@ -6,6 +6,10 @@
 
 作业2截图：https://github.com/lonely1929/2018118141_Android/blob/master/2-Homework/2-Homework.md
 
-作业3：https://github.com/lonely1929/2018118141_Android/tree/master/3-Homework/RecyclerViewTest
+作业3：https://github.com/lonely1929/2018118141_Android/tree/master/3-Homework/UIWidgetTest
 
 作业3截图：https://github.com/lonely1929/2018118141_Android/blob/master/3-Homework/3-Homework.md
+
+作业4：https://github.com/lonely1929/2018118141_Android/tree/master/4-Homework/RecyclerViewTest
+
+作业4截图：https://github.com/lonely1929/2018118141_Android/blob/master/4-Homework/4-Homework.md
