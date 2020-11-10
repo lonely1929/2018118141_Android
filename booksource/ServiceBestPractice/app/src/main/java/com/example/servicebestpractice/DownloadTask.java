@@ -109,8 +109,8 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
         }
     }
 
-    @Overrides
-    protected  void onProgressExecute(Integer status) {
+    @Override
+    protected  void onPostExecute(Integer status) {
         switch (status) {
             case TYPE_SUCCESS:
                 listenner.onSuccess();
