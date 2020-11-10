@@ -19,7 +19,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     public static final int TYPE_PAUSED = 2;
     public static final int TYPE_CANCELED = 3;
 
-    private DownloadListenner listenner;
+    private DownloadListener listener;
 
     private boolean isCanceled = false;
 
@@ -27,8 +27,8 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 
     private int lastProgress;
 
-    public DownloadTask(DownloadListenner listenner) {
-        this.listenner = listenner;
+    public DownloadTask(DownloadListener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
         RandomAccessFile savedFile = null;
         File file = null;
         try {
-            long downloadedLength = 0; // 记录已下载的文件长度
+            long downloadedLength = 0;
             String downloadUrl = params[0];
             String fileName = downloadUrl.substring(downloadUrl.lastIndexOf("/"));
             String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
@@ -72,7 +72,6 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
                     } else {
                         total += len;
                         savedFile.write(b, 0, len);
-                        // 计算已下载的百分比
                         int progress = (int) ((total + downloadedLength) * 100 / contentLength);
                         publishProgress(progress);
                     }
@@ -104,7 +103,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     protected void onProgressUpdate(Integer... valus) {
         int progress = valus[0];
         if (progress > lastProgress) {
-            listenner.onProgress(progress);
+            listener.onProgress(progress);
             lastProgress = progress;
         }
     }
@@ -113,16 +112,16 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     protected  void onPostExecute(Integer status) {
         switch (status) {
             case TYPE_SUCCESS:
-                listenner.onSuccess();
+                listener.onSuccess();
                 break;
             case TYPE_FAILED:
-                listenner.onFailed();
+                listener.onFailed();
                 break;
             case TYPE_PAUSED:
-                listenner.onPause();
+                listener.onPause();
                 break;
             case TYPE_CANCELED:
-                listenner.onCanceled();
+                listener.onCanceled();
                 break;
             default:
                 break;

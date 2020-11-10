@@ -21,7 +21,7 @@ public class DownloadService extends Service {
 
     private String downloadUrl;
 
-    private DownloadListenner listenner = new DownloadListenner() {
+    private DownloadListener listener = new DownloadListener() {
         @Override
         public void onProgress(int progress) {
             getNotificationManager().notify(1, getNotification("Downloading...", progress));
@@ -29,9 +29,9 @@ public class DownloadService extends Service {
 
         @Override
         public void onSuccess() {
-             downloadTask = null;
-             stopForeground(true);
-             getNotificationManager().notify(1, getNotification("Download Success", -1));
+            downloadTask = null;
+            stopForeground(true);
+            getNotificationManager().notify(1, getNotification("Download Success", -1));
             Toast.makeText(DownloadService.this, "Download Success", Toast.LENGTH_SHORT).show();
         }
 
@@ -52,13 +52,10 @@ public class DownloadService extends Service {
         @Override
         public void onCanceled() {
             downloadTask = null;
-           stopForeground(true);
-           Toast.makeText(DownloadService.this, "Canceled", Toast.LENGTH_SHORT).show();
+            stopForeground(true);
+            Toast.makeText(DownloadService.this, "Canceled", Toast.LENGTH_SHORT).show();
         }
     };
-
-    public DownloadService() {
-    }
 
     private DownloadBinder mBinder = new DownloadBinder();
 
@@ -72,9 +69,9 @@ public class DownloadService extends Service {
         public void startDownload(String url) {
             if (downloadTask == null) {
                 downloadUrl = url;
-                downloadTask = new DownloadTask(listenner);
+                downloadTask = new DownloadTask(listener);
                 downloadTask.execute(downloadUrl);
-                startForeground(1, getNotification("Doenloading...", 0));
+                startForeground(1, getNotification("Downloading...", 0));
                 Toast.makeText(DownloadService.this, "Downloading...", Toast.LENGTH_SHORT).show();
             }
         }

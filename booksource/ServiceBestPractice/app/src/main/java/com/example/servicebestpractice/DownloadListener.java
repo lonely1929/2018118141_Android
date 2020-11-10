@@ -1,6 +1,6 @@
 package com.example.servicebestpractice;
 
-public interface DownloadListenner {
+public interface DownloadListener {
 
     void onProgress(int progress);
 
