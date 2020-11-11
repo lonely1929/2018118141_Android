@@ -1,12 +1,14 @@
 package com.example.servicebestpractice;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Binder;
+import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 import android.widget.Toast;
@@ -20,6 +22,8 @@ public class DownloadService extends Service {
     private DownloadTask downloadTask;
 
     private String downloadUrl;
+
+    private NotificationManager manager;
 
     private DownloadListener listener = new DownloadListener() {
         @Override
@@ -105,11 +109,17 @@ public class DownloadService extends Service {
     }
 
     private Notification getNotification(String title, int progress) {
+        manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("my_service",
+                    "前台Service通知", NotificationManager.IMPORTANCE_DEFAULT);
+            manager.createNotificationChannel(channel);
+        }
         Intent intent = new Intent(this, MainActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-        builder.setSmallIcon(R.mipmap.ic_launcher);
-        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher));
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "my_service");
+        builder.setSmallIcon(R.drawable.ic_launcher);
+        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher));
         builder.setContentIntent(pi);
         builder.setContentTitle(title);
         if (progress >= 0) {
