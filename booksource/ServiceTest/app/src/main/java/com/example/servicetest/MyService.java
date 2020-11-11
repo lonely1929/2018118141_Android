@@ -1,11 +1,14 @@
 package com.example.servicetest;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Binder;
+import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -15,7 +18,7 @@ public class MyService extends Service {
 
     private DownloadBinder mBinder = new DownloadBinder();
 
-    private String channeId;
+    private NotificationManager manager;
 
     class DownloadBinder extends Binder {
 
@@ -40,9 +43,15 @@ public class MyService extends Service {
     public void onCreate() {
         super.onCreate();
         Log.d("MyService", "onCreate executed");
+        manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("my_service",
+                    "前台Service通知", NotificationManager.IMPORTANCE_DEFAULT);
+            manager.createNotificationChannel(channel);
+        }
         Intent intent = new Intent(this, MainActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
-        Notification notification = new NotificationCompat.Builder(this, channeId)
+        Notification notification = new NotificationCompat.Builder(this, "my_service")
                 .setContentTitle("This is content title")
                 .setContentText("This is content text")
                 .setWhen(System.currentTimeMillis())
