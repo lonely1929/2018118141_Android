@@ -32,6 +32,40 @@
 
 
 
+![image-20201116165619427](8-Homewor.assets/image-20201116165619427.png)
+
+
+
+![image-20201116170137549](8-Homewor.assets/image-20201116170137549.png)
+
+
+
+![image-20201116170156301](8-Homewor.assets/image-20201116170156301.png)
+
+
+
+![image-20201116170627415](8-Homewor.assets/image-20201116170627415.png)
+
+
+
+![image-20201116170748124](8-Homewor.assets/image-20201116170748124.png)
+
+
+
+![image-20201116170800590](8-Homewor.assets/image-20201116170800590.png)
+
+
+
+![image-20201116171501281](8-Homewor.assets/image-20201116171501281.png)
+
+
+
+![image-20201116171656872](8-Homewor.assets/image-20201116171656872.png)
+
+
+
+![image-20201116171858560](8-Homewor.assets/image-20201116171858560.png)
+
 
 
 ## 实验总结：
