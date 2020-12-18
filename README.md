@@ -34,3 +34,6 @@
 
 作业10&11截图：https://github.com/lonely1929/2018118141_Android/blob/master/10%2611-Homework/10%2611-Homework.md
 
+期末大作业：https://github.com/lonely1929/2018118141_Android/tree/master/TiktokDemo
+
+期末大作业截图：https://github.com/lonely1929/2018118141_Android/tree/master/%E6%9C%9F%E6%9C%AB%E5%A4%A7%E4%BD%9C%E4%B8%9A
