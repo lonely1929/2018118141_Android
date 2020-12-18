@@ -1,0 +1,4 @@
+#Fri Dec 18 16:18:10 CST 2020
+base.0=F\:\\2018118141\\TiktokDemo\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
