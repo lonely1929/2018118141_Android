@@ -20,6 +20,15 @@ public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
 
+    private Fruit[] fruits = {new Fruit("Apple", R.drawable.apple), new Fruit("Banana",
+            R.drawable.banana),
+                new Fruit("Orange", R.drawable.orange), new Fruit("Watermelon", R.
+            drawable.watermelon),
+                new Fruit("Pear", R.drawable.pear), new Fruit("Grape", R.drawable.
+            grape),
+                new Fruit("Pineapple", R.drawable.pineapple), new Fruit("Strawbe", R.drawable.orange),
+                new Fruit("Orange", R.drawable.orange), new Fruit("Orange", R.drawable.orange)};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
